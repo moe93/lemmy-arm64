@@ -19,16 +19,8 @@ DEBIAN_FRONTEND=noninteractive apt remove -y cargo;
 DEBIAN_FRONTEND=noninteractive apt autoremove -y;
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh;
 
-# --------------------------------------
-# NEED TO RESTART SHELL HERE
-# MOVE BOTTOM PORTION TO A DIFFERENT SCRIPT
-# OR FIGURE OUT A WAY TO RESTART SHELL WITHOUT INTERRUPTING
-# THE SCRIPT'S EXECUTION.
-# --------------------------------------
-
-# Install the x86_64 Linux target
-# (or whatever architecture we are building this on)
-rustup target add x86_64-unknown-linux-musl
+# Source .profile to update PATH to have rust run properly
+source ~/.profile
 
 # Make scripts executable
 chmod +x amd64.sh;

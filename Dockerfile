@@ -2,7 +2,8 @@
 
 FROM rust:1.70-slim-buster as builder
 WORKDIR /app
-ARG CARGO_BUILD_TARGET=x86_64-unknown-linux-musl
+# ARG CARGO_BUILD_TARGET=x86_64-unknown-linux-musl
+ARG CARGO_BUILD_TARGET=aarch64-unknown-linux-gnu
 
 # comma-seperated list of features to enable
 ARG CARGO_BUILD_FEATURES=default
@@ -17,7 +18,10 @@ RUN apt-get update \
 
 # Install the x86_64 Linux target
 # (or whatever architecture we are building this on)
-RUN rustup target add x86_64-unknown-linux-musl
+# RUN rustup target add x86_64-unknown-linux-musl
+# RUN rustup target add aarch64-unknown-linux-gnu
+RUN rustup target add ${CARGO_BUILD_TARGET}
+
 
 COPY . .
 
