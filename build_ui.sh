@@ -19,9 +19,9 @@ else
 fi
 
 # manual updates
-# cd lemmy-translations/;
-# git checkout "$TRANSLATION_COMMIT" || exit 1;
-# cd ../;
+cd lemmy-translations/;
+git checkout "$TRANSLATION_COMMIT" || exit 1;
+cd ../;
 git checkout "$LEMMY_VERSION";
 
 # bug fix: https://github.com/nodejs/docker-node/issues/1912

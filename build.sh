@@ -1,8 +1,8 @@
 #!/bin/bash
 set -e
 
-export LEMMY_VERSION="0.18.3";
-export TRANSLATION_COMMIT="b3079135e1c6f488a52f11df84baa45e3d0e4f8e";
+export LEMMY_VERSION="0.18.4";
+export TRANSLATION_COMMIT="b122306e52d94807528068a7e8f8011c29d31db1";
 
 # Check if we already cloned the lemmy git
 DIRECTORY="lemmy";
@@ -17,10 +17,10 @@ else
   cd lemmy;
 fi
 
-# manual updates
-#cd crates/utils/translations/;
-#git checkout "$TRANSLATION_COMMIT" || exit 1;
-#cd ../../../;
+# Manual updates
+cd crates/utils/translations/;
+git checkout "$TRANSLATION_COMMIT" || exit 1;
+cd ../../../;
 git checkout "$LEMMY_VERSION";
 
 rm -f ./docker/Dockerfile && cp ../Dockerfile ./docker/ || exit 1;
