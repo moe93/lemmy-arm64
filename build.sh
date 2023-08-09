@@ -9,13 +9,15 @@ DIRECTORY="lemmy";
 if [ ! -d "$DIRECTORY" ]; then
   echo "$DIRECTORY does not exist, cloning."
   git clone https://github.com/LemmyNet/lemmy.git || exit 1;
-  cd lemmy;
-  git fetch --tags;
-  git submodule init;
-  git submodule update --recursive --remote;
 else
-  cd lemmy;
+  echo "$DIRECTORY does not exist, Updating."
 fi
+
+# Make sure repo is up to date
+cd lemmy;
+git fetch --tags;
+git submodule init;
+git submodule update --recursive --remote;
 
 # Manual updates
 cd crates/utils/translations/;
