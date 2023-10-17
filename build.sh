@@ -1,8 +1,8 @@
 #!/bin/bash
 set -e
 
-export LEMMY_VERSION="0.18.4";
-export TRANSLATION_COMMIT="b122306e52d94807528068a7e8f8011c29d31db1";
+export LEMMY_VERSION="0.18.5";
+export TRANSLATION_COMMIT="18da10858d8c63750beb06247947f25d91944741";
 
 # Check if we already cloned the lemmy git
 DIRECTORY="lemmy";
