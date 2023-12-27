@@ -1,3 +1,6 @@
+# DISCONTINUED
+The Lemmy team is now officially releasing ARM64 builds for docker. You should use those instead.
+
 # Lemmy ARM64 Images
 
 [hub.docker.com/r/modeh93/lemmy/tags](https://hub.docker.com/r/modeh93/lemmy/tags)
@@ -13,7 +16,3 @@ Duration in seconds for step 6 (build).
 
 **Virtualized ARM Ubuntu 22.04LTS on host MacBook M1 Pro (BuildX)**
 - 379s to compile
-
-**ARM64 (native)**
-- 451s on Hetzner VPS cax41 (16 Core, 32 GB RAM, Ampere Altra Q80-30)
-    - You can pay by the hour, so this only works out to about $0.04 per build.
